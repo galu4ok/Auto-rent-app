@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/auto-rent-app/static/css/main.f855e6bc.css",
+    "main.js": "/auto-rent-app/static/js/main.ae875994.js",
+    "static/js/787.b40aebac.chunk.js": "/auto-rent-app/static/js/787.b40aebac.chunk.js",
+    "static/media/logo.svg": "/auto-rent-app/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/auto-rent-app/index.html",
+    "main.f855e6bc.css.map": "/auto-rent-app/static/css/main.f855e6bc.css.map",
+    "main.ae875994.js.map": "/auto-rent-app/static/js/main.ae875994.js.map",
+    "787.b40aebac.chunk.js.map": "/auto-rent-app/static/js/787.b40aebac.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f855e6bc.css",
+    "static/js/main.ae875994.js"
+  ]
+}
