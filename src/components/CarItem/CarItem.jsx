@@ -13,7 +13,7 @@ const splitAddress = address => {
   return { city, country };
 };
 
-const CarItem = ({ car }) => {
+const CarItem = ({ advert }) => {
   const {
     id,
     year,
@@ -25,7 +25,7 @@ const CarItem = ({ car }) => {
     rentalPrice,
     rentalCompany,
     address,
-  } = car;
+  } = advert;
   const { city, country } = splitAddress(address);
 
   return (
@@ -40,7 +40,7 @@ const CarItem = ({ car }) => {
       </div>
       <div>
         <p>
-          {make} <span>{model}</span>, {year}
+          {make} <span>{model}</span>,{year}
           <span>{rentalPrice}</span>
         </p>
         <p>

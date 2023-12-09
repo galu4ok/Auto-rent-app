@@ -1,17 +1,18 @@
+import { useSelector } from 'react-redux';
+import { selectAdverts } from '../../redux/selector';
+
 import CarItem from '../CarItem/CarItem';
 
-const CarList = ({ cars }) => {
+const CarList = () => {
+  const adverts = useSelector(selectAdverts);
+
   return (
     <ul>
-      {Array.isArray(cars) ? (
-        cars.map(car => (
-          <li key={car.id}>
-            <CarItem car={car} />
-          </li>
-        ))
-      ) : (
-        <li>No cars available</li>
-      )}
+      {adverts.map(advert => (
+        <li key={advert.id}>
+          <CarItem advert={advert} />
+        </li>
+      ))}
     </ul>
   );
 };
