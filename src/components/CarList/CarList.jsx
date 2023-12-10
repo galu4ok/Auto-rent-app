@@ -11,15 +11,12 @@ const CarList = () => {
   const isLoading = useSelector(selectIsLoading);
   const [page, setPage] = useState(1); // Стартова сторінка
 
-  console.log('Поточна к-сть оголошень:', adverts.length);
-
   useEffect(() => {
     dispatch(fetchAdverts({ page }));
-    console.log('Page', page);
   }, [dispatch, page]);
 
-  const loadMore = () => {
-    setPage(prevPage => prevPage + 1); // Оновлюємо сторінку на 1 б
+  const handleLoadMore = () => {
+    setPage(prevPage => prevPage + 1); // Оновлюємо сторінку на 1
   };
 
   return (
@@ -31,7 +28,9 @@ const CarList = () => {
           </li>
         ))}
       </ul>
-      {adverts?.length > 0 && !isLoading && <LoadMoreBtn loadMore={loadMore} />}
+      {adverts?.length > 0 && !isLoading && (
+        <LoadMoreBtn loadMore={handleLoadMore} />
+      )}
       {adverts?.length === 0 && (
         <div>
           <p>Sorry, there are no advertisements.</p>

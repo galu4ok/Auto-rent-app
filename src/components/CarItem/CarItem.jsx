@@ -1,19 +1,19 @@
+import { useState } from 'react';
+import ModalComponent from '../ModalComponent/ModalComponent';
 import Car from '../../images/car.png';
-
-const splitAddress = address => {
-  let city = '';
-  let country = '';
-  const arr = address.split(',');
-  if (arr.length >= 2) {
-    city = arr[1].trim(); // Видаляємо можливі пробіли з міста
-  }
-  if (arr.length >= 1) {
-    country = arr[arr.length - 1].trim(); // Видаляємо можливі пробіли з країни
-  }
-  return { city, country };
-};
+import { splitAddress } from '../../helpers/splitAddress';
 
 const CarItem = ({ advert }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
+
   const {
     id,
     year,
@@ -34,6 +34,7 @@ const CarItem = ({ advert }) => {
         <img
           src={img ? `${img}` : Car}
           alt={`${make} ${model}`}
+          loading="lazy"
           width="300"
           height="200"
         />
@@ -44,13 +45,22 @@ const CarItem = ({ advert }) => {
           <span>{rentalPrice}</span>
         </p>
         <p>
-          {city} | {country} | {rentalCompany}
+          {city} | {country} | {rentalCompany} | Premium
         </p>
         <p>
           {type} | {model} | {id} | {accessories[0]}
         </p>
       </div>
-      <button type="button">Learn more</button>
+      <button type="button" onClick={handleOpenModal}>
+        Learn more
+      </button>
+      <ModalComponent
+        isModalOpen={isModalOpen}
+        handleCloseModal={handleCloseModal}
+        advert={advert}
+        city={city}
+        country={country}
+      />
     </div>
   );
 };

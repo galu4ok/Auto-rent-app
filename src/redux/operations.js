@@ -26,7 +26,7 @@ export const fetchAdverts = createAsyncThunk(
 
       // виконуємо HTTP-запит та отримуємо усі оголошення
       const response = await axios.get(url);
-      console.log('Усі оголошення:', response.data);
+
       // При успішному запиті повертаємо проміс із даними
       return response.data;
     } catch (e) {
