@@ -1,5 +1,6 @@
 import Modal from 'react-modal';
 import { Link } from 'react-router-dom';
+import { nanoid } from 'nanoid';
 import Car from '../../images/car.png';
 import { splitRentalCond } from '../../helpers/splitRentalCond';
 
@@ -72,7 +73,6 @@ const ModalComponent = ({
           width="300"
           height="200"
         />
-
         <h3>
           {make} <span>{model}</span>, {year}
         </h3>
@@ -89,7 +89,7 @@ const ModalComponent = ({
         <div>
           <ul>
             {accessories.map((item, index) => (
-              <li key={item.id}>
+              <li key={nanoid()}>
                 {item}
                 {index !== accessories.length - 1 && <span>{'  |  '}</span>}
               </li>
@@ -97,7 +97,7 @@ const ModalComponent = ({
           </ul>
           <ul>
             {functionalities.map((item, index) => (
-              <li key={item.id}>
+              <li key={nanoid()}>
                 {item}
                 {index !== functionalities.length - 1 && <span>{'  |  '}</span>}
               </li>

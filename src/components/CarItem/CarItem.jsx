@@ -30,8 +30,6 @@ const CarItem = ({ advert }) => {
 
   const isFavorites = favorites?.some(item => item.id === id);
 
-  console.log('isFavorites:', isFavorites);
-
   const handleFavorites = () => {
     return isFavorites
       ? dispatch(delFromFavorites(advert)) // Видалення зі списку улюблених

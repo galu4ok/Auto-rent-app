@@ -29,7 +29,7 @@ const CarList = () => {
         ))}
       </ul>
       {adverts?.length > 0 && !isLoading && (
-        <LoadMoreBtn loadMore={handleLoadMore} />
+        <LoadMoreBtn onClick={handleLoadMore} />
       )}
       {adverts?.length === 0 && (
         <div>
