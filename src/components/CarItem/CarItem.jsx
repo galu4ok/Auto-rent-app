@@ -7,6 +7,9 @@ import { selectFavorites } from '../../redux/selector';
 import { addToFavorites, delFromFavorites } from '../../redux/advertsSlice';
 import { splitAddress } from '../../helpers/splitAddress';
 
+import { FiHeart } from 'react-icons/fi';
+import { CarItemWrapper, ImageWrapper, LearnMoreBtn } from './CarsItem.styled';
+
 const CarItem = ({ advert }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -45,17 +48,28 @@ const CarItem = ({ advert }) => {
   };
 
   return (
-    <div>
-      <div>
-        <FavoritesBtn onClick={handleFavorites}>Favorite</FavoritesBtn>
+    <CarItemWrapper>
+      <ImageWrapper>
+        <FavoritesBtn onClick={handleFavorites}>
+          <FiHeart
+            style={{
+              width: '18px',
+              height: '18px',
+              fill: isFavorites ? 'rgba(52, 112, 255, 1)' : 'transparent',
+              stroke: isFavorites ? 'rgba(52, 112, 255, 1)' : 'white',
+              cursor: 'pointer',
+              transition: 'fill 0.3s ease, stroke 0.3s ease',
+            }}
+          />
+        </FavoritesBtn>
         <img
           src={img ? `${img}` : Car}
           alt={`${make} ${model}`}
           loading="lazy"
-          width="300"
-          height="200"
+          width="100%"
+          height="100%"
         />
-      </div>
+      </ImageWrapper>
       <div>
         <p>
           {make} <span>{model}</span>,{year}
@@ -68,9 +82,9 @@ const CarItem = ({ advert }) => {
           {type} | {model} | {id} | {accessories[0]}
         </p>
       </div>
-      <button type="button" onClick={handleOpenModal}>
+      <LearnMoreBtn type="button" onClick={handleOpenModal}>
         Learn more
-      </button>
+      </LearnMoreBtn>
       <ModalComponent
         isModalOpen={isModalOpen}
         handleCloseModal={handleCloseModal}
@@ -78,7 +92,7 @@ const CarItem = ({ advert }) => {
         city={city}
         country={country}
       />
-    </div>
+    </CarItemWrapper>
   );
 };
 

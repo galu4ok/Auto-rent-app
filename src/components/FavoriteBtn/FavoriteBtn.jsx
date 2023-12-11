@@ -1,8 +1,11 @@
-const FavoritesBtn = ({ onClick }) => {
+import { FiHeart } from 'react-icons/fi';
+import { Favorite } from './FavoriteBtn.styled';
+
+const FavoritesBtn = ({ isChosen, onClick }) => {
   return (
-    <button type="button" onClick={onClick}>
-      Favorite
-    </button>
+    <Favorite isChosen={isChosen} onClick={onClick}>
+      <FiHeart />
+    </Favorite>
   );
 };
 

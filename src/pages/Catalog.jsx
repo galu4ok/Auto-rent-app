@@ -4,6 +4,7 @@ import CarFilter from '../components/CarFilter/CarFilter';
 import CarList from '../components/CarList/CarList';
 import { selectError, selectIsLoading } from '../redux/selector';
 import { fetchAdverts } from '../redux/operations';
+import { MainContainer } from '../GlobalStyle';
 
 const Catalog = () => {
   const dispatch = useDispatch();
@@ -17,12 +18,11 @@ const Catalog = () => {
   }, [dispatch]);
 
   return (
-    <section>
+    <MainContainer>
       <CarFilter />
       {isLoading && !error && <b>Request in progress... </b>}
-      <h2>Каталог автомобілів для оренди</h2>
       <CarList />
-    </section>
+    </MainContainer>
   );
 };
 

@@ -1,13 +1,10 @@
+import { Hero } from '../components/Hero/Hero';
+import { MainContainer } from '../GlobalStyle';
 const Home = () => {
   return (
-    <div>
-      <h1>Auto Rent - найкращий прокат авто в Україні</h1>
-      <p>
-        Оренда автомобілів в еру цифрових технологій. Відсутність офісного
-        приміщення, менеджера чи паперової документації.
-      </p>
-      <h2>Опис послуг</h2>
-    </div>
+    <MainContainer>
+      <Hero />
+    </MainContainer>
   );
 };
 export default Home;

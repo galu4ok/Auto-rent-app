@@ -1,10 +1,11 @@
 import FavoritesList from '../components/FavoritesList/FavoritesList';
+import { MainContainer } from '../GlobalStyle';
 
 const Favorites = () => {
   return (
-    <section>
+    <MainContainer>
       <FavoritesList />
-    </section>
+    </MainContainer>
   );
 };
 

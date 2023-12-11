@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 
 export const Header = () => {
   return (
-    <header>
+    <Header>
       <div>
         <nav>
           <NavLink to="/">
@@ -24,6 +24,6 @@ export const Header = () => {
           </ul>
         </nav>
       </div>
-    </header>
+    </Header>
   );
 };
