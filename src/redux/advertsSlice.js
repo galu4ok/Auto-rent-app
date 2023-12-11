@@ -43,6 +43,9 @@ const advertsSlice = createSlice({
       );
       state.favorites = updatedFavorites;
     },
+    changeFilter(state, action) {
+      state.filter = action.payload;
+    },
   },
   extraReducers: builder => {
     builder
@@ -52,5 +55,6 @@ const advertsSlice = createSlice({
   },
 });
 
-export const { addToFavorites, delFromFavorites } = advertsSlice.actions;
+export const { addToFavorites, delFromFavorites, changeFilter } =
+  advertsSlice.actions;
 export const advertsReducer = advertsSlice.reducer;
