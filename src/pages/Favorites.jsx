@@ -1,8 +1,11 @@
+import FavoritesList from '../components/FavoritesList/FavoritesList';
+
 const Favorites = () => {
   return (
-    <>
-      <h2>Вподобання</h2>
-    </>
+    <section>
+      <FavoritesList />
+    </section>
   );
 };
+
 export default Favorites;

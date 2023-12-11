@@ -28,6 +28,22 @@ const advertsSlice = createSlice({
   name: 'adverts',
   // Початковий стан редюсера слайсу
   initialState,
+  reducers: {
+    addToFavorites: (state, action) => {
+      const clickedAdvert = state.items.find(
+        item => item.id === action.payload.id
+      );
+      if (clickedAdvert) {
+        state.favorites.push(clickedAdvert);
+      }
+    },
+    delFromFavorites: (state, action) => {
+      const updatedFavorites = state.favorites.filter(
+        item => item.id !== action.payload.id
+      );
+      state.favorites = updatedFavorites;
+    },
+  },
   extraReducers: builder => {
     builder
       .addCase(fetchAdverts.pending, handlePending)
@@ -36,4 +52,5 @@ const advertsSlice = createSlice({
   },
 });
 
+export const { addToFavorites, delFromFavorites } = advertsSlice.actions;
 export const advertsReducer = advertsSlice.reducer;

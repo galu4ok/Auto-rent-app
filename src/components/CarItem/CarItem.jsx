@@ -1,18 +1,17 @@
 import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import ModalComponent from '../ModalComponent/ModalComponent';
+import FavoritesBtn from '../FavoriteBtn/FavoriteBtn';
 import Car from '../../images/car.png';
+import { selectFavorites } from '../../redux/selector';
+import { addToFavorites, delFromFavorites } from '../../redux/advertsSlice';
 import { splitAddress } from '../../helpers/splitAddress';
 
 const CarItem = ({ advert }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const handleOpenModal = () => {
-    setIsModalOpen(true);
-  };
-
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
-  };
+  const dispatch = useDispatch();
+  const favorites = useSelector(selectFavorites);
 
   const {
     id,
@@ -26,11 +25,31 @@ const CarItem = ({ advert }) => {
     rentalCompany,
     address,
   } = advert;
+
   const { city, country } = splitAddress(address);
+
+  const isFavorites = favorites?.some(item => item.id === id);
+
+  console.log('isFavorites:', isFavorites);
+
+  const handleFavorites = () => {
+    return isFavorites
+      ? dispatch(delFromFavorites(advert)) // Видалення зі списку улюблених
+      : dispatch(addToFavorites(advert)); // Додавання до списку улюблених
+  };
+
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
 
   return (
     <div>
       <div>
+        <FavoritesBtn onClick={handleFavorites}>Favorite</FavoritesBtn>
         <img
           src={img ? `${img}` : Car}
           alt={`${make} ${model}`}
