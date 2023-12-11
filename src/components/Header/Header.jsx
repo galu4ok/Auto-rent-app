@@ -1,29 +1,30 @@
 import logo from '../../../src/logo.svg';
 import '../../../src/App.css';
-import { NavLink } from 'react-router-dom';
+import { SectionContainer } from '../../GlobalStyle';
+import { SiteHeader, NavList, Navigation } from './Header.styled';
 
 export const Header = () => {
   return (
-    <Header>
-      <div>
+    <SectionContainer>
+      <SiteHeader>
         <nav>
-          <NavLink to="/">
+          <Navigation to="/">
             <img src={logo} className="App-logo" alt="logo" />
-          </NavLink>
+          </Navigation>
 
-          <ul>
+          <NavList>
             <li>
-              <NavLink to="/">Home</NavLink>
+              <Navigation to="/">Home</Navigation>
             </li>
             <li>
-              <NavLink to="/catalog">Catalog</NavLink>
+              <Navigation to="/catalog">Catalog</Navigation>
             </li>
             <li>
-              <NavLink to="/favorites">Favorites</NavLink>
+              <Navigation to="/favorites">Favorites</Navigation>
             </li>
-          </ul>
+          </NavList>
         </nav>
-      </div>
-    </Header>
+      </SiteHeader>
+    </SectionContainer>
   );
 };
