@@ -85,3 +85,9 @@ export const MainContainer = styled.main`
   padding-top: 20px;
   padding-bottom: 20px;
 `;
+export const Message = styled.p`
+  font-weight: 400;
+  font-size: 14px;
+  color: black;
+  text-align: center;
+`;

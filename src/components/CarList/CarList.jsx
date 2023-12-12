@@ -4,7 +4,7 @@ import { selectAdverts, selectIsLoading } from '../../redux/selector';
 import CarItem from '../CarItem/CarItem';
 import LoadMoreBtn from '../LoadMoreBtn/LoadMoreBtn';
 import { fetchAdverts } from '../../redux/operations';
-import { SectionContainer } from '../../GlobalStyle';
+import { SectionContainer, Message } from '../../GlobalStyle';
 import { CarsList } from './CarList.styled';
 
 const CarList = () => {
@@ -34,9 +34,7 @@ const CarList = () => {
         <LoadMoreBtn onClick={handleLoadMore} />
       )}
       {adverts?.length === 0 && (
-        <div>
-          <p>Sorry, there are no advertisements.</p>
-        </div>
+        <Message>Sorry, there are no advertisements.</Message>
       )}
     </SectionContainer>
   );

@@ -69,6 +69,10 @@ const ModalComponent = ({
   } = advert;
   const { minAge, licence, condition } = splitRentalCond(rentalConditions);
 
+  const handleNotFoundImage = event => {
+    event.target.src = Car;
+  };
+
   return (
     <Modal
       isOpen={isModalOpen}
@@ -82,6 +86,7 @@ const ModalComponent = ({
         <ImageWrapper>
           <img
             src={img ? `${img}` : Car}
+            onError={handleNotFoundImage}
             alt={`${make} ${model}`}
             loading="lazy"
           />

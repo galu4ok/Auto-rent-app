@@ -26,12 +26,6 @@ export const ImageWrapper = styled.div`
   }
 `;
 
-export const IconHeart = styled.div`
-  position: absolute;
-  top: 14px;
-  right: 14px;
-`;
-
 export const LearnMoreBtn = styled.button`
   width: 100%;
   padding: 12px 0;
@@ -53,24 +47,24 @@ export const LearnMoreBtn = styled.button`
   }
 `;
 
-export const TitleThumb = styled.div`
+export const Title = styled.div`
   display: flex;
   justify-content: space-between;
   margin-bottom: 8px;
 
   color: #121417;
   font-family: Manrope;
-  font-size: 13px; /* 16px */
+  font-size: 13px;
   font-style: normal;
   font-weight: 500;
-  line-height: 24px; /* 150% */
+  line-height: 24px;
 
   span {
     color: #3470ff;
   }
 `;
 
-export const InfoThumb = styled.div`
+export const CarInfo = styled.div`
   display: flex;
   flex-wrap: wrap;
   margin-bottom: auto;
@@ -82,6 +76,6 @@ export const InfoThumb = styled.div`
     font-size: 12px;
     font-style: normal;
     font-weight: 400;
-    line-height: 18px; /* 150% */
+    line-height: 18px;
   }
 `;

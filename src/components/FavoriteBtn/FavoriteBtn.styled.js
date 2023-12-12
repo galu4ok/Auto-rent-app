@@ -1,5 +1,11 @@
 import { styled } from 'styled-components';
 
+export const FavoritesBtn = styled.div`
+  position: absolute;
+  top: 14px;
+  right: 14px;
+`;
+
 export const Favorite = styled.div`
   position: absolute;
   top: 14px;

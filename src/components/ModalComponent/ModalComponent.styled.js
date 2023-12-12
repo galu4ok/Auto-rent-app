@@ -30,7 +30,7 @@ export const ModalDiv = styled.div`
     font-style: normal;
     font-weight: 400;
     line-height: 20px;
-    margin-bottom: 24px;
+    /* margin-bottom: 24px; */
   }
 
   h4 {
@@ -102,6 +102,10 @@ export const FeaturesList = styled.ul`
 export const RentalWrapper = styled.div`
   display: flex;
   margin-top: auto;
+  justify-content: center;
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
 `;
 export const RentalList = styled.ul`
   display: flex;

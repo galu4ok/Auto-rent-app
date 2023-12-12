@@ -1,7 +1,8 @@
 import { useSelector } from 'react-redux';
 import CarItem from '../CarItem/CarItem';
 import { selectFavorites } from '../../redux/selector';
-import { SectionContainer } from '../../GlobalStyle';
+import { SectionContainer, Message } from '../../GlobalStyle';
+import { FavoriteList } from './FavoritesList.styles';
 
 const FavoritesList = () => {
   const favorites = useSelector(selectFavorites);
@@ -9,17 +10,17 @@ const FavoritesList = () => {
   return (
     <SectionContainer>
       {favorites.length > 0 ? (
-        <ul>
+        <FavoriteList>
           {favorites.map(advert => (
             <li key={advert.id}>
               <CarItem advert={advert} />
             </li>
           ))}
-        </ul>
+        </FavoriteList>
       ) : (
-        <div>
+        <Message>
           <h2>Sorry, there are no favorite cars yet...</h2>
-        </div>
+        </Message>
       )}
     </SectionContainer>
   );

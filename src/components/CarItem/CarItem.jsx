@@ -8,7 +8,13 @@ import { addToFavorites, delFromFavorites } from '../../redux/advertsSlice';
 import { splitAddress } from '../../helpers/splitAddress';
 
 import { FiHeart } from 'react-icons/fi';
-import { CarItemWrapper, ImageWrapper, LearnMoreBtn } from './CarsItem.styled';
+import {
+  CarItemWrapper,
+  ImageWrapper,
+  Title,
+  CarInfo,
+  LearnMoreBtn,
+} from './CarsItem.styled';
 
 const CarItem = ({ advert }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -47,6 +53,10 @@ const CarItem = ({ advert }) => {
     setIsModalOpen(false);
   };
 
+  const handleNotFoundImage = event => {
+    event.target.src = Car;
+  };
+
   return (
     <CarItemWrapper>
       <ImageWrapper>
@@ -64,24 +74,28 @@ const CarItem = ({ advert }) => {
         </FavoritesBtn>
         <img
           src={img ? `${img}` : Car}
+          onError={handleNotFoundImage}
           alt={`${make} ${model}`}
           loading="lazy"
           width="100%"
           height="100%"
         />
       </ImageWrapper>
-      <div>
+      <Title>
         <p>
           {make} <span>{model}</span>,{year}
-          <span>{rentalPrice}</span>
         </p>
+
+        <p>{rentalPrice}</p>
+      </Title>
+      <CarInfo>
         <p>
           {city} | {country} | {rentalCompany} | Premium
         </p>
         <p>
           {type} | {model} | {id} | {accessories[0]}
         </p>
-      </div>
+      </CarInfo>
       <LearnMoreBtn type="button" onClick={handleOpenModal}>
         Learn more
       </LearnMoreBtn>
