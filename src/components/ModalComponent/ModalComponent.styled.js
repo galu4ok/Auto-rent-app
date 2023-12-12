@@ -16,7 +16,7 @@ export const ModalDiv = styled.div`
     font-size: 18px;
     font-style: normal;
     font-weight: 500;
-    line-height: 24px;
+    line-height: 24px; /* 133.333% */
     margin-bottom: 8px;
 
     span {
@@ -29,8 +29,8 @@ export const ModalDiv = styled.div`
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
-    line-height: 20px;
-    /* margin-bottom: 24px; */
+    line-height: 20px; /* 142.857% */
+    margin-bottom: 24px;
   }
 
   h4 {
@@ -38,7 +38,7 @@ export const ModalDiv = styled.div`
     font-size: 14px;
     font-style: normal;
     font-weight: 500;
-    line-height: 20px;
+    line-height: 20px; /* 142.857% */
     margin-bottom: 8px;
   }
 `;
@@ -85,14 +85,11 @@ export const AdvertInfo = styled.div`
 `;
 export const Features = styled.div`
   margin-bottom: 14px;
-
-  p {
-    color: rgba(18, 20, 23, 0.5);
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 18px;
-  }
+  color: rgba(18, 20, 23, 0.5);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
 `;
 export const FeaturesList = styled.ul`
   display: flex;

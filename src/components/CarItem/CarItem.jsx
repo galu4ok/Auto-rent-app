@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import ModalComponent from '../ModalComponent/ModalComponent';
-import FavoritesBtn from '../FavoriteBtn/FavoriteBtn';
+import FavoritesBtn from '../FavoritesBtn/FavoritesBtn';
 import Car from '../../images/car.png';
 import { selectFavorites } from '../../redux/selector';
 import { addToFavorites, delFromFavorites } from '../../redux/advertsSlice';
@@ -72,6 +72,7 @@ const CarItem = ({ advert }) => {
             }}
           />
         </FavoritesBtn>
+
         <img
           src={img ? `${img}` : Car}
           onError={handleNotFoundImage}
