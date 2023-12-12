@@ -1,9 +1,9 @@
 import { FiHeart } from 'react-icons/fi';
 import { Favorite } from './FavoriteBtn.styled';
 
-const FavoritesBtn = ({ isChosen, onClick }) => {
+const FavoritesBtn = ({ isFavorites, onClick }) => {
   return (
-    <Favorite isChosen={isChosen} onClick={onClick}>
+    <Favorite isFavorites={isFavorites} onClick={onClick}>
       <FiHeart />
     </Favorite>
   );
