@@ -1,8 +1,19 @@
 import Modal from 'react-modal';
-import { Link } from 'react-router-dom';
 import { nanoid } from 'nanoid';
+import { MdOutlineClose } from 'react-icons/md';
 import Car from '../../images/car.png';
 import { splitRentalCond } from '../../helpers/splitRentalCond';
+import {
+  ModalDiv,
+  CloseBtn,
+  ImageWrapper,
+  AdvertInfo,
+  Features,
+  FeaturesList,
+  RentalWrapper,
+  RentalList,
+  RentalBtn,
+} from './ModalComponent.styled';
 
 Modal.setAppElement('#root');
 
@@ -64,49 +75,53 @@ const ModalComponent = ({
       onRequestClose={handleCloseModal}
       style={customStyles}
     >
-      <div>
-        <button onClick={handleCloseModal}>Close</button>
-        <img
-          src={img ? `${img}` : Car}
-          alt={`${make} ${model}`}
-          loading="lazy"
-          width="300"
-          height="200"
-        />
+      <ModalDiv>
+        <CloseBtn onClick={handleCloseModal}>
+          <MdOutlineClose />
+        </CloseBtn>
+        <ImageWrapper>
+          <img
+            src={img ? `${img}` : Car}
+            alt={`${make} ${model}`}
+            loading="lazy"
+          />
+        </ImageWrapper>
         <h3>
           {make} <span>{model}</span>, {year}
         </h3>
-        <div>
+        <AdvertInfo>
           <p>
             {city} | {country} | Id: {id} | Year: {year} | Type: {type}
           </p>
           <p>
             Fuel Consumption: {fuelConsumption} | Engine Size: {engineSize}
           </p>
-        </div>
+        </AdvertInfo>
         <p>{description}</p>
         <h4>Accessories and functionalities:</h4>
-        <div>
-          <ul>
+        <Features>
+          <FeaturesList>
             {accessories.map((item, index) => (
-              <li key={nanoid()}>
+              <li key={nanoid()} style={{ whiteSpace: 'pre' }}>
                 {item}
                 {index !== accessories.length - 1 && <span>{'  |  '}</span>}
               </li>
             ))}
-          </ul>
-          <ul>
+          </FeaturesList>
+          <FeaturesList>
             {functionalities.map((item, index) => (
-              <li key={nanoid()}>
+              <li key={nanoid()} style={{ whiteSpace: 'pre' }}>
                 {item}
                 {index !== functionalities.length - 1 && <span>{'  |  '}</span>}
               </li>
             ))}
-          </ul>
-        </div>
+          </FeaturesList>
+        </Features>
         <h4>Rental Conditions:</h4>
-        <ul>
-          <li>{minAge}</li>
+        <RentalList>
+          <li>
+            Minimum age: <span> {minAge}</span>
+          </li>
           <li>{licence}</li>
           <li>{condition}</li>
           <li>
@@ -115,9 +130,11 @@ const ModalComponent = ({
           <li>
             Price: <span>{rentalPrice.slice(1) + '$'}</span>
           </li>
-        </ul>
-      </div>
-      <Link href="tel:+380730000000">Rental car</Link>
+        </RentalList>
+      </ModalDiv>
+      <RentalWrapper>
+        <RentalBtn href="tel:+380730000000">Rental car</RentalBtn>
+      </RentalWrapper>
     </Modal>
   );
 };

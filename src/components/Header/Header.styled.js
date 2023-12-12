@@ -9,7 +9,6 @@ export const SiteHeader = styled.header`
   padding: 20px;
   margin-bottom: 20px;
   border-bottom: 1px solid black;
-  box-shadow: 0px 1px 5px -2px rgba(0, 0, 0, 0.82);
 `;
 export const NavList = styled.ul`
   list-style: none;

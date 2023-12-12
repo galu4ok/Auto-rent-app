@@ -82,6 +82,6 @@ export const SectionContainer = styled.section`
 `;
 
 export const MainContainer = styled.main`
-  padding-top: 113px;
-  padding-bottom: 22px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 `;
