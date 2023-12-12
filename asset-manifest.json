@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/auto-rent-app/static/css/main.863307b1.css",
-    "main.js": "/auto-rent-app/static/js/main.1adae353.js",
+    "main.js": "/auto-rent-app/static/js/main.d805fe80.js",
     "static/media/car.png": "/auto-rent-app/static/media/car.9f93b9f0b286362c27c9.png",
     "static/media/logo.svg": "/auto-rent-app/static/media/logo.75f0ecc12b3a8e34c744cfca1cdd5f06.svg",
     "index.html": "/auto-rent-app/index.html",
     "main.863307b1.css.map": "/auto-rent-app/static/css/main.863307b1.css.map",
-    "main.1adae353.js.map": "/auto-rent-app/static/js/main.1adae353.js.map"
+    "main.d805fe80.js.map": "/auto-rent-app/static/js/main.d805fe80.js.map"
   },
   "entrypoints": [
     "static/css/main.863307b1.css",
-    "static/js/main.1adae353.js"
+    "static/js/main.d805fe80.js"
   ]
 }
